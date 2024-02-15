@@ -15,11 +15,16 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+require 'holidays/core_extensions/date'
+class Date
+  include Holidays::CoreExtensions::Date
+end
+
 Redmine::Plugin.register :redmine_holidays_plugin do
   name 'Redmine Holidays Plugin'
   author 'Toshio Takiguchi'
   description 'This is a holiday calendar plugin for Redmine'
-  version '0.0.1'
+  version '0.0.2'
   url 'https://github.com/taktos/redmine_holidays_plugin'
 
   settings :default => {
